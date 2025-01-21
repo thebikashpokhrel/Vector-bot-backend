@@ -32,7 +32,7 @@ collection = db["classroom-tokens"]
 async def root():
     logger.info("Root endpoint accessed")
     return HTMLResponse(
-        content=f"<html><body><h1>Alive</p></body></html>",
+        content=f"<html><body><h1>Alive</h1></body></html>",
         status_code=200,
     )
 
