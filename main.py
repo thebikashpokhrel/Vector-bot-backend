@@ -10,7 +10,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 
 # Load environment variables
 load_dotenv()
-BACKEND_URL = os.getenv("BACKENDURL")
+BACKENDURL = os.getenv("BACKENDURL")
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
