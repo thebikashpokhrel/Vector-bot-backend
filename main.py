@@ -31,7 +31,10 @@ collection = db["classroom-tokens"]
 @app.get("/")
 async def root():
     logger.info("Root endpoint accessed")
-    return JSONResponse(status_code=200, content={"message": "Hello World"})
+    return HTMLResponse(
+        content=f"<html><body><h1>Subscription Successful</h1><p>User {clientid} has been successfully subscribed.</p></body></html>",
+        status_code=200,
+    )
 
 
 # GET Route after the OAuth flow is completed
