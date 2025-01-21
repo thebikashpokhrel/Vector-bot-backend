@@ -10,6 +10,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 
 # Load environment variables
 load_dotenv()
+BACKEND_URL = os.getenv("BACKENDURL")
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -74,7 +75,7 @@ async def create_user(request: Request):
         flow = InstalledAppFlow.from_client_secrets_file(
             "credentials.json",  # Path to credentials file
             scopes=SCOPES,
-            redirect_uri="http://localhost:8001/classroom/subscribe",  # Redirect URI used during OAuth2 flow
+            redirect_uri=f"{BACKENDURL}classroom/subscribe",  # Redirect URI used during OAuth2 flow
         )
 
         flow.fetch_token(code=code)
